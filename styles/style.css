@@ -1,0 +1,123 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .forum-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #333;
+  }
+  
+  .comments-section {
+    margin-top: 20px;
+  }
+  
+  .comment {
+    background-color: #cac7f1;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .comment p {
+    margin: 0;
+  }
+  
+  .comment-form {
+    margin-top: 20px;
+    margin-left: 0px;
+    border-radius: 5px;
+    position: relative;
+  }
+  
+  textarea {
+    width: calc(100% - 100px);
+    height: 150px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+  
+  button {
+    height: 20%;
+    position: absolute; 
+    left: 0; 
+    margin-top: 180px;
+    background-color: #06182c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+
+  header {
+    background-color: #5f5c6b;
+    padding: 1rem;
+    /* text-align: center */
+  }
+  
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin-right: 20px;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  
+  h2 {
+    margin-bottom: 1rem;
+  }
+
+  .forum-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative; /* Ensure relative positioning for the container */
+}
+
+.create-post-button-container {
+    text-align: center; /* Center the button horizontally */
+    margin-top: 20px; /* Add space between the comments section and the button */
+}
+
+.create-post-button {
+    width: 120px;
+    height: 40px;
+    background-color: #0f0e2c;
+    position: relative;
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-left: 700px;
+}
+
+.create-post-button:hover {
+    background-color: #2e7b28;
+}
