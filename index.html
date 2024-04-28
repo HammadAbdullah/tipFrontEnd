@@ -1,48 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8" />
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
-    <meta name="author" content="" />
-    <!-- References to external CSS files -->
-    <link href="./styles/stylecss.css" rel="stylesheet" />
-    <title>Instatute Forum</title>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>Post Detail Page</title>
 </head>
-
 <body>
-    <!--consistent menu on all pages-->
-    <nav>
-        <p class="menu"><a href="index.html">Home</a></p>
-        <p class="menu"><a href="login.html">Login</a></p>
-        <p class="menu"><a href="contact.html">Contact</a></p>
-        <p class="menu"><a href="about.html">About</a></p>
-    </nav>
-
-    <img id ="logo_image" src="styles/images/logo.png" alt="img_logo" /> 
-     <!--
-        Reference
-        https://dribbble.com/shots/10967983-Collaboration-And-Creativity-Illustration
-    -->
-
-    <header>
-        <h1>Instatute Forum</h1>
-        <h2>Collaborate, Innovate, and Educate</h2>
-        <p>Welcome to Instatute Forum, your innovative platform for interactive learning and community engagement</p>
-    </header>
-
-   <button type="button"><a href="login.html">Login</a></button>
-<button type="button"><a href="register">Register</a></button></p>
-
-<!--same footer format on all pages-->
-    <footer>
-        <p>COS60010-Technology Inquiry Project</p>
-        <p>&#169;Workshop-Monday-08:30am-Team #3</p>
-        <p></p>
-    </footer>
-
+  <div class="forum-container">
+    <h1>Post Detail Page</h1>
+    <div class="comments-section">
+      <h2>Comments</h2>
+      <div class="comment">
+        <p>Comment 1</p>
+      </div>
+      <div class="comment">
+        <p>Comment 2</p>
+      </div>
+      <div class="comment">
+        <p>Comment 3</p>
+      </div>
+      <div class="comment">
+        <p>Comment 4</p>
+      </div>
+      <!-- Add more comments dynamically using JavaScript -->
+    </div>
+    <form class="comment-form">
+      <textarea placeholder="Write your comment here"></textarea>
+      <button type="submit" >Submit</button>
+    </form>
+  </div>
 </body>
-
 </html>
