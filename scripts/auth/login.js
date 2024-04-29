@@ -15,7 +15,7 @@ async function handleLogin() {
 
         const data = await response.json();
         if (!response.ok) {
-            throw new Error('Failed to login.');
+            throw new Error(data.error || 'Failed to login.');
         }
 
         if (data.success) {
@@ -35,3 +35,10 @@ async function handleLogin() {
         alert(`Login failed: ${error.message}`);
     }
 }
+
+function init() { 
+    var loginBtn = document.getElementById('login-btn'); 
+    loginBtn.onclick = handleLogin;
+}
+
+window.onload = init; 
