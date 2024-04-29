@@ -7,9 +7,43 @@ var mockJSON = {
     "__v": 0
 }; 
 
-function makeJSON() { 
-    let title = mockJSON.title;
-    console.log(title);
+var mockCategoriesData = {
+    "success": true,
+    "data": [
+        {
+            "_id": "66271e8293c8c242ebe73a47",
+            "id": "1",
+            "title": "science",
+            "__v": 0
+        },
+        {
+            "_id": "66271e8893c8c242ebe73a49",
+            "id": "2",
+            "title": "math",
+            "__v": 0
+        }
+    ]
+}; 
+
+function hello() {
+    var data = mockCategoriesData.data; 
+
+    for (var i = 0; i < data.length, i++) { 
+        
+    }
 }
 
-window.onload = makeJSON;
+
+
+function init() { 
+    var title = mockJSON.title;
+    var content = mockJSON.content; 
+
+    var htmlTitle = document.getElementById('title'); 
+    htmlTitle.textContent = title; 
+
+    var htmlContent = document.getElementById('content'); 
+    htmlContent.textContent = content;
+}
+
+window.onload = init;
