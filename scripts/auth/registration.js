@@ -23,8 +23,8 @@ async function handleRegister() {
 
         if (data.success) {
             console.log('Registration Success:', data);
-            alert(`Registration successful! Welcome, ${data.data.firstname}.`);
-            window.location.href = 'home.html';
+            localStorage.setItem('currentUser', JSON.stringify(data.data));
+            window.location.href = 'categories.html';
         } else {
             if (data.error && data.error.details) {
                 throw new Error(data.error.details.map(detail => detail.message).join(', '));

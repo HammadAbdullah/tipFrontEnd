@@ -1,30 +1,15 @@
-var postID = '6624c326000581d5944e0ec1';
-//sessionStorage.getItem("postID");
-var currentUser = {
-    "_id": "662720ef8a5c1d58e40c1f71",
-    "username": "testing",
-    "firstname": "testing",
-    "lastname": "testing",
-    "email": "testing@gmail.com",
-    "password": "$2a$10$TIr.PyIJMxfMZTN4x0y5bOIRygrTdqfQ2OqB6pbxl7KldURZ7R4ny",
-    "__v": 0
-};
-//sessionStorage.getItem("user");
-var category = {
-    "_id": "66271e8293c8c242ebe73a47",
-    "id": "1",
-    "title": "science",
-    "__v": 0
-};
-//sessionStorage.getItem('category');
+var postID = sessionStorage.getItem("postID");
+var currentUser = JSON.parse(localStorage.getItem("currentUser"));
+var category = JSON.parse(sessionStorage.getItem('category'));
 
 // MARK: - VIEW CREATOR
 function renderContent(data) {
     const contentContainer = document.getElementById('contentContainer');
     contentContainer.innerHTML = `
         <span class="badge rounded-pill text-bg-info mb-2">${capitalizeFirstLetter(category.title)}</span>
+        <span class="badge rounded-pill text-bg-success mb-2">${data.date}</span>
         <h2>${capitalizeFirstLetter(data.title)}</h2>
-        <h6 class="card-subtitle mb-2 text-body-secondary">By ${capitalizeFirstLetter(data.author)}, ${data.date}</h6>
+        <h6 class="card-subtitle mb-2 text-body-secondary">By ${capitalizeFirstLetter(data.author)}</h6>
         <p class="card-text">${data.content}</p>
     `;
 }
@@ -41,8 +26,8 @@ function renderComments(comments) {
         card.classList.add('card', 'mb-2');
         card.innerHTML = `
             <div class="card-body">
-                <h5 class="card-title">${capitalizeFirstLetter(comment.author)}</h5>
-                <h6 class="card-subtitle mb-2 text-body-secondary">${comment.date}</h6>
+                <h6 class="card-title">${capitalizeFirstLetter(comment.author)}</h6>
+                <p class="card-subtitle mb-2 text-body-secondary">On ${comment.date}</p>
                 <p class="card-text">${capitalizeFirstLetter(comment.content)}</p>
             </div>
         `;
@@ -50,7 +35,7 @@ function renderComments(comments) {
     });
 }
 
-document.getElementById('postButton').addEventListener('click', async function() {
+document.getElementById('postButton').addEventListener('click', async function () {
     const commentInput = document.getElementById('commentInput');
     const commentText = commentInput.value.trim();
     if (commentText !== '') {

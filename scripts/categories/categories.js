@@ -6,7 +6,7 @@ function createCategoryButton(category, isActive = false) {
 
     tempContainer.innerHTML = `<button type="button" 
         class="list-group-item list-group-item-action text-start${isActive ? ' active' : ''}"
-        id="categoryButton">${capitalizeFirstLetter(category.title)}</button>`;
+        id="categoryButton">${category.title}</button>`;
 
     const button = tempContainer.firstChild;
     button.onclick = function () {
@@ -23,16 +23,16 @@ function createPostCard(post, container) {
     card.className = 'card flex-md-row mb-2 box-shadow h-md-250';
 
     card.innerHTML = `
-        <div class="card-body d-flex flex-column align-items-start">
-            <strong class="d-inline-block mb-2 text-primary">${capitalizeFirstLetter(post.author)}</strong>
-            <h3 class="mb-0">
-                <a class="text-dark" href="${post.link}">${capitalizeFirstLetter(post.title)}</a>
-            </h3>
-            <div class="mb-1 text-muted">${post.date}</div>
-            <p class="card-text mb-2 text-muted text-start">${capitalizeFirstLetter(post.content)}</p>
-            <button type="button" class="btn btn-link p-0" onclick="window.location.href='${post.link}'">Continue reading</button>
-        </div>
-    `;
+    <div class="card-body d-flex flex-column align-items-start">
+        <strong class="d-inline-block mb-2 text-primary text-capitalize">${post.author}</strong>
+        <h3 class="mb-0">
+            <div class="text-dark text-start text-capitalize" href="${post.link}">${post.title}</div>
+        </h3>
+        <div class="mb-1 text-muted">${post.date}</div>
+        <p class="card-text mb-2 text-muted text-start" style="overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;">${post.content}</p>
+        <button type="button" class="btn btn-link p-0" onclick="onContinueReadingTapped('${post._id}')">Continue reading</button>
+    </div>
+`;
 
     container.appendChild(card);
 }
@@ -60,7 +60,7 @@ function updateListGroup(categories) {
 
 function addPostsToContainer(posts) {
     var categoryTitle = document.getElementById('categoryTitle');
-    categoryTitle.textContent = capitalizeFirstLetter(selectedCategory.title);
+    categoryTitle.textContent = selectedCategory.title;
 
     const container = document.getElementById('container');
     const children = container.children;
@@ -123,6 +123,13 @@ async function getUserById(id) {
 }
 
 // MARK: - FUNCTIONS
+function onContinueReadingTapped(postID) {
+    sessionStorage.setItem('postID', postID);
+    sessionStorage.setItem('category', JSON.stringify(selectedCategory));
+    window.location.href = 'postDetail.html';
+}
+
+// MARK: - HELPER FUNCTIONS
 function getMonthName(monthNumber) {
     const months = [
         "January", "February", "March", "April", "May", "June",
@@ -137,10 +144,6 @@ function getDateMonthYear(dateString) {
     const month = getMonthName(dateObject.getMonth() + 1);
     const year = dateObject.getFullYear();
     return date + " " + month + ", " + year
-}
-
-function capitalizeFirstLetter(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
 // MARK: - INIT

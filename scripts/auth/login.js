@@ -20,9 +20,9 @@ async function handleLogin() {
 
         if (data.success) {
             console.log('Login Success:', data);
-            alert(`Login successful! Welcome ${data.data.validEmail.firstname}.`);
             localStorage.setItem('token', data.data.token);
-            window.location.href = 'home.html';
+            localStorage.setItem('currentUser', JSON.stringify(data.data.validEmail));
+            window.location.href = 'categories.html';
         } else {
             if (data.error && data.error.details) {
                 throw new Error(data.error.details.map(detail => detail.message).join(', '));
