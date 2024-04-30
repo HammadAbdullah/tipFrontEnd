@@ -1,0 +1,118 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+/*                           login page                  */
+.navbar {
+  background-color: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-end;
+}
+.navbar a {
+  text-decoration: none;
+  margin-right: 15px;
+  color: #333;
+}
+.login-container {
+  width: 300px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.login-container h2 {
+  text-align: center;
+  color: #333;
+}
+.login-container form {
+  display: flex;
+  flex-direction: column;
+}
+.login-container input {
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+}
+.login-container button {
+  padding: 10px;
+  background-color: #6a1b9a;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+.login-container button:hover {
+  background-color: #7e57c2;
+}
+.footer {
+  text-align: center;
+  margin-top: 20px;
+}
+
+
+/*                  Registration page          */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+.navbar {
+  background-color: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-start;
+  
+}
+.navbar a {
+  text-decoration: none;
+  font-size: 19px;
+  margin-right: 15px;
+  color: #333;
+  transition: color 0.3s ease, font-size 0.3s ease;
+}
+.navbar a:hover {
+  color: white; /* Change text color to white on hover */
+  background-color: #6a1b9a; /* Change background color to purple on hover */
+  padding: 3px;
+  font-size: 20px; /* Increase font size on hover */
+  border-radius: 5px;
+}
+.registration-container {
+  width: 300px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.registration-container h2 {
+  text-align: center;
+  color: #333;
+}
+.registration-container form {
+  display: flex;
+  flex-direction: column;
+}
+.registration-container input {
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+}
+.registration-container button {
+  padding: 10px;
+  background-color: #6a1b9a;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+.registration-container button:hover {
+  background-color: #7e57c2;
+}
+.footer {
+  text-align: center;
+  margin-top: 20px;
+}

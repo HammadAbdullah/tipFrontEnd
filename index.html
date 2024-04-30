@@ -7,42 +7,35 @@
     <meta name="keywords" content="" />
     <meta name="author" content="" />
     <!-- References to external CSS files -->
-    <link href="./styles/stylecss.css" rel="stylesheet" />
+    <link href="./styles/index.css" rel="stylesheet" />
     <title>Instatute Forum</title>
-
 </head>
 
 <body>
-    <!--consistent menu on all pages-->
-    <nav>
-        <p class="menu"><a href="index.html">Home</a></p>
-        <p class="menu"><a href="login.html">Login</a></p>
-        <p class="menu"><a href="contact.html">Contact</a></p>
-        <p class="menu"><a href="about.html">About</a></p>
-    </nav>
+    <!-- consistent menu on all pages -->
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="login.html">Login</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+    </div>
 
-    <img id ="logo_image" src="styles/images/logo.png" alt="img_logo" /> 
-     <!--
-        Reference
-        https://dribbble.com/shots/10967983-Collaboration-And-Creativity-Illustration
-    -->
+ 
+        <img id= "logo_image" src="./styles/images/index.jpg" alt="">
 
-    <header>
-        <h1>Instatute Forum</h1>
-        <h2>Collaborate, Innovate, and Educate</h2>
-        <p>Welcome to Instatute Forum, your innovative platform for interactive learning and community engagement</p>
-    </header>
+        <header id="mainHeader">
+            <h1 id="forumTitle">Educative : Instatute Forum</h1>
+            <h2 id="forumSubtitle">Collaborate, Innovate, and Educate</h2>
+            <p id="welcomeMessage">Welcome to Instatute Forum, your innovative platform for interactive learning and
+                community engagement</p>
+        </header>
 
-   <button type="button"><a href="login.html">Login</a></button>
-<button type="button"><a href="register">Register</a></button></p>
+        <button id="registerButton" type="button"><a href="register.html">Register</a></button>
+    
 
-<!--same footer format on all pages-->
-    <footer>
-        <p>COS60010-Technology Inquiry Project</p>
-        <p>&#169;Workshop-Monday-08:30am-Team #3</p>
-        <p></p>
-    </footer>
+    
 
+    <script src="./index.js"></script>
 </body>
 
 </html>

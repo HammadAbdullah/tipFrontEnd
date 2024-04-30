@@ -3,42 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="./styles/post.css">
   <title>Post Page</title>
 </head>
 <body>
-    <header>
-        <nav>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="about.html">About</a></li>
-          </ul>
-        </nav>
-      </header>
+        <div class="navbar">
+            <a href="index.html">Home</a>
+            <a href="login.html">Login</a>
+            <a href="contact.html">Contact</a>
+            <a href="about.html">About</a>
+        </div>
 
-      <div class="create-post-button-container">
-        <button class="create-post-button">Create a post</button>
-    </div>
+        <div class="loader" id="loadingOverlay">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+      
+        <div class="container">
+            <h1>Create a Post</h1>
+            <textarea id="postContent" rows="4" cols="50" placeholder="Write your post here..."></textarea>
+            <button onclick="createPost()">Post</button>
+            <div id="postList">
+                <!-- Dynamically populated post list will appear here -->
+            </div>
+            <p id="message"></p>
+        </div>
+        <script src="./scripts/post.js"></script>
+      
 
-  <div class="forum-container">
-
-    <div class="comments-section">
-      <h2>Categories A: Posts</h2>
-      <div class="comment">
-        <p>Post A</p>
-      </div>
-      <div class="comment">
-        <p>Post B</p>
-      </div>
-      <div class="comment">
-        <p>Post C</p>
-      </div>
-      <div class="comment">
-        <p>Post D</p>
-      </div>
-      <!-- Add more comments dynamically using JavaScript -->
-    </div>
+ 
   </div>
 </body>
 </html>
