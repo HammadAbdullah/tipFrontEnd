@@ -1,0 +1,12 @@
+/*
+target: aboutus.html, contactus.html
+author: Yugyeong
+description: img position, content padding
+*/
+.img_f{
+  float: right;
+}
+
+.section_body {
+  padding: 30px;
+}
