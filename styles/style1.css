@@ -3,10 +3,20 @@ target: aboutus.html, contactus.html
 author: Yugyeong
 description: img position, content padding
 */
-.img_f{
+.img_f {
+  float: right;
+  margin-right: 20%;
+}
+
+.img_c {
   float: right;
 }
 
 .section_body {
   padding: 30px;
+}
+
+.section2_body {
+
+  margin-left: 45%;
 }
