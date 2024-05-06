@@ -2,113 +2,162 @@
 
 /* ------------------------------------------------------------- */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-  }
-
-  /*                           login page                  */
-  .navbar {
-    background-color: #fff;
-    padding: 10px;
-    display: flex;
-    justify-content: flex-start;
-    
-  }
-  .navbar a {
-    text-decoration: none;
-    font-size: 19px;
-    margin-right: 15px;
-    color: #333;
-    transition: color 0.3s ease, font-size 0.3s ease;
-  }
-  .navbar a:hover {
-    color: white; /* Change text color to white on hover */
-    background-color: #6a1b9a; /* Change background color to purple on hover */
-    padding: 3px;
-    font-size: 20px; /* Increase font size on hover */
-    border-radius: 5px;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
 }
 
-.main-content{
-    position: relative;
+/*                           login page                  */
+/* .navbar {
+  background-color: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-start;
+
+}
+
+.navbar a {
+  text-decoration: none;
+  font-size: 19px;
+  margin-right: 15px;
+  color: #333;
+  transition: color 0.3s ease, font-size 0.3s ease;
+} */
+
+/* .navbar a:hover {
+  color: white; */
+  /* Change text color to white on hover */
+  /* background-color: #6a1b9a; */
+  /* Change background color to purple on hover */
+  /* padding: 3px;
+  font-size: 20px; */
+  /* Increase font size on hover */
+  /* border-radius: 5px;
+} */
+
+.main-content {
+  position: relative;
+}
+
+#logo_image {
+  width: 100%;
+  height: 100vh;
+  /* Fills the viewport height */
+  object-fit: cover;
+  /* Ensures the image covers the entire container */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  /* Places the image behind other content */
+}
+
+#mainHeader {
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  text-align: left;
+  color: #6a1b9a;
+  z-index: 1;
+  /* Places the text above the image */
+}
+
+#forumTitle {
+  font-size: 36px;
+  font-weight: bold;
+  overflow: hidden;
+  /* Prevents overflow */
+  white-space: nowrap;
+  /* Ensures text stays in one line */
+  animation: typing 4s steps(40, end);
+  /* Typing animation for the title */
+}
+
+#forumSubtitle,
+#welcomeMessage {
+  font-size: 24px;
+  opacity: 0;
+  animation: smoothAppearance 2s forwards;
+  /* Smooth appearance animation */
+}
+
+@keyframes typing {
+  from {
+    width: 0;
   }
-  
-  #logo_image {
+
+  to {
     width: 100%;
-    height: 100vh; /* Fills the viewport height */
-    object-fit: cover; /* Ensures the image covers the entire container */
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -1; /* Places the image behind other content */
   }
-  
-  #mainHeader {
+}
+
+h1 {
+  overflow: hidden;
+  /* Prevents overflow */
+  white-space: nowrap;
+  /* Ensures text stays in one line */
+}
+
+/* Smooth appearance for h2 and p */
+@keyframes smoothAppearance {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+h2,
+p {
+  opacity: 0;
+}
+
+/* Add class to trigger animations */
+.animate-text h1 {
+  animation: typing 4s steps(40, end);
+}
+
+.animate-text h2,
+.animate-text p {
+  animation: smoothAppearance 2s forwards;
+}
+
+#registerButton {
+  background-color: #6a1b9a;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: left;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#loginButton {
+  background-color: #6a1b9a;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: left;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#buttonContainer { 
     position: absolute;
-    top: 50%;
-    left: 40%;
-    transform: translate(-50%, -50%);
-    text-align: left;
-    color: #6a1b9a;
-    z-index: 1; /* Places the text above the image */
-  }
-  
-  #forumTitle {
-    font-size: 36px;
-    font-weight: bold;
-    overflow: hidden; /* Prevents overflow */
-    white-space: nowrap; /* Ensures text stays in one line */
-    animation: typing 4s steps(40, end); /* Typing animation for the title */
-  }
-  
-  #forumSubtitle,
-  #welcomeMessage {
-    font-size: 24px;
-    opacity: 0;
-    animation: smoothAppearance 2s forwards; /* Smooth appearance animation */
-  }
-  @keyframes typing {
-    from { width: 0; }
-    to { width: 100%; }
-  }
-  h1 {
-    overflow: hidden; /* Prevents overflow */
-    white-space: nowrap; /* Ensures text stays in one line */
-  }
-  /* Smooth appearance for h2 and p */
-  @keyframes smoothAppearance {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-  h2, p {
-    opacity: 0;
-  }
-  /* Add class to trigger animations */
-  .animate-text h1 {
-    animation: typing 4s steps(40, end);
-  }
-  .animate-text h2, .animate-text p {
-    animation: smoothAppearance 2s forwards;
-  }
-  
-  #registerButton {
-    background-color: #6a1b9a; /* Blue color for register button */
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    text-align: left;
-    text-decoration: none;
-    display: block;
-    font-size: 16px;
-    cursor: pointer;
-    position: absolute; /* Absolute positioning */
     bottom: 10%;
-    left: 10%; /* Adjust as needed */
-  }
-  
-  #registerButton a {
-    color: white;
-    text-decoration: none; /* Remove underline from anchor text */
-  }
+    left: 10%;
+}
+
+#registerButton a {
+  color: white;
+  text-decoration: none;
+  /* Remove underline from anchor text */
+}

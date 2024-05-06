@@ -5,7 +5,7 @@ function createCategoryButton(category, isActive = false) {
     const tempContainer = document.createElement('div');
 
     tempContainer.innerHTML = `<button type="button" 
-        class="list-group-item list-group-item-action text-start${isActive ? ' active' : ''}"
+        class="list-group-item btn list-group-item-action text-start${isActive ? ' active list-group-item-secondary' : ''} border-0 mb-2 text-capitalize"
         id="categoryButton">${category.title}</button>`;
 
     const button = tempContainer.firstChild;
@@ -20,17 +20,17 @@ function createCategoryButton(category, isActive = false) {
 
 function createPostCard(post, container) {
     const card = document.createElement('div');
-    card.className = 'card flex-md-row mb-2 box-shadow h-md-250';
+    card.className = 'card flex-md-row mb-3 box-shadow h-md-250 bg-white border-0 shadow-sm';
 
     card.innerHTML = `
     <div class="card-body d-flex flex-column align-items-start">
-        <strong class="d-inline-block mb-2 text-primary text-capitalize">${post.author}</strong>
+        <strong class="d-inline-block mb-2 text-capitalize text-primary">${post.author}</strong>
         <h3 class="mb-0">
             <div class="text-dark text-start text-capitalize" href="${post.link}">${post.title}</div>
         </h3>
         <div class="mb-1 text-muted">${post.date}</div>
         <p class="card-text mb-2 text-muted text-start" style="overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;">${post.content}</p>
-        <button type="button" class="btn btn-link p-0" onclick="onContinueReadingTapped('${post._id}')">Continue reading</button>
+        <button type="button" class="btn btn-link p-0 text-primary" onclick="onContinueReadingTapped('${post._id}')">Continue reading</button>
     </div>
 `;
 
@@ -40,7 +40,7 @@ function createPostCard(post, container) {
 // MARK: - VIEW BINDER
 function updateListGroup(categories) {
     const listGroup = document.querySelector('.list-group');
-    listGroup.innerHTML = '';
+    listGroup.innerHTML = '<h5 class="mb-3 text-start" > Explore categories</h5>';
 
     categories.forEach((category, index) => {
         var isActive = false
@@ -59,9 +59,6 @@ function updateListGroup(categories) {
 }
 
 function addPostsToContainer(posts) {
-    var categoryTitle = document.getElementById('categoryTitle');
-    categoryTitle.textContent = selectedCategory.title;
-
     const container = document.getElementById('container');
     const children = container.children;
     for (let i = children.length - 1; i >= 0; i--) {

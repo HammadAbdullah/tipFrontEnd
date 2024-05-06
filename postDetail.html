@@ -27,12 +27,6 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="home.html">Home<span class="sr-only"></span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="login-hammad.html">Login</a>
-                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="contactus.html">Contact</a>
                 </li>
@@ -43,20 +37,21 @@
         </div>
     </nav>
 
-    <div id="contentContainer" class="ps-5 pe-5 pt-5">
+    <div id="contentContainer" class="ps-5 pe-5 pt-5" style="width: 85%;">
         <!-- Content -->
     </div>
 
-    <div class="container-fluid p-5">
+    <div class="container-fluid p-5" id="quiz-container" hidden>
         <span class="badge rounded-pill text-bg-danger mb-2">Test your knowledge</span>
         <h2>Question</h2>
-        <p class="card-text">Which concept in quantum mechanics allows particles to exist in multiple states
-            simultaneously?</p>
+        <p class="card-text" id="quiz-question">Question will be here</p>
+
+        <p id="feedback" class="text-center"></p>
         <div class="d-inline-flex gap-1">
-            <button class="btn btn-primary" type="button">Superposition</button>
-            <button class="btn btn-primary" type="button">Entanglement</button>
-            <button class="btn btn-primary" type="button">Observation effect</button>
-            <button class="btn btn-primary" type="button">Quantum teleportation</button>
+            <button id="answer1" class="btn btn-primary" type="button">Answer 1</button>
+            <button id="answer2" class="btn btn-primary" type="button">Answer 2</button>
+            <button id="answer3" class="btn btn-primary" type="button">Answer 3</button>
+            <button id="answer4" class="btn btn-primary" type="button">Answer 4</button>
         </div>
     </div>
 
@@ -64,10 +59,10 @@
         <div class="input-group mb-2">
             <textarea id="commentInput" class="form-control" aria-label="With textarea"
                 placeholder="Your comment"></textarea>
-            <button id="postButton" type="button" class="btn btn-primary" style="width: 120px;">Post</button>
+            <button id="postButton" type="button" class="btn btn-dark" style="width: 120px;">Post</button>
         </div>
 
-        <div id="commentsList">
+        <div id="commentsList" class="rounded border">
             <!-- Comments -->
         </div>
     </div>

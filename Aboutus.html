@@ -16,11 +16,20 @@
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
   <link rel="stylesheet" href="./styles/style1.css">
+
+  <style>
+    .custom-img {
+      border-radius: 54.38px;
+      height: 300px;
+      width: 100%;
+      object-fit: cover;
+    }
+  </style>
 </head>
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="index.html">Instatute</a>
+    <a class="navbar-brand ps-3" href="index.html">Instatute</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -28,12 +37,6 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="home.html">Home<span class="sr-only"></span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="login-hammad.html">Login</a>
-        </li>
         <li class="nav-item">
           <a class="nav-link" href="contactus.html">Contact</a>
         </li>
@@ -41,28 +44,67 @@
           <a class="nav-link" href="Aboutus.html">About</a>
         </li>
       </ul>
-
-         
     </div>
   </nav>
-  <section class="section_body">
-    <img class="img_f" src="./styles/images/about.jpg"
-      alt="An image on the page, two people discussing something in front of a monitor" width="500px">
-    <h1>ABOUT US</h1>
 
-    <p>We started as a place to connect to help you succeed in college</p>
-    <p>Share your knowledge and share your opinions on a variety of topics</p>
-    <p>Enjoy your journey</p>
-    <p>We are here to help you achieve your academic goals </p>
+  <section class="section_body pb-5">
+    <div class="row d-flex justify-content-between align-items-center">
+      <div class="col-md-4">
+        <h1>About us</h1>
+        <p>We started as a place to connect and support your success in college. Here, you can share your knowledge and
+          opinions on a variety of topics. Enjoy your journey with us as we help you achieve your academic goals.</p>
+        <br>
+        <h1>Our vision</h1>
+        <p>Networking for Students: Engage with peers, share knowledge and opinions, and find support for your academic
+          goals.</p>
+        <button class="btn btn-dark ps-3 pe-3 pt-2 pb-2">Contact Us</button>
+      </div>
+      <div class="col-md-6">
+        <img
+          src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="An image on the page, two people discussing something in front of a monitor"
+          class="custom-img float-right">
+      </div>
+    </div>
+  </section>
 
+  <section class="section2_body photo-1523240795612-9a054b0db644?q">
+    <div class="p-5 m-4 bg-light">
+      <div class="row">
+        <div class="col-md-6">
+          <h3>Dear Students, All Free</h3>
+          <h5>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+              class="bi bi-universal-access-circle" viewBox="0 0 16 16">
+              <path
+                d="M8 4.143A1.071 1.071 0 1 0 8 2a1.071 1.071 0 0 0 0 2.143m-4.668 1.47 3.24.316v2.5l-.323 4.585A.383.383 0 0 0 7 13.14l.826-4.017c.045-.18.301-.18.346 0L9 13.139a.383.383 0 0 0 .752-.125L9.43 8.43v-2.5l3.239-.316a.38.38 0 0 0-.047-.756H3.379a.38.38 0 0 0-.047.756Z" />
+              <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0M1 8a7 7 0 1 1 14 0A7 7 0 0 1 1 8" />
+            </svg> Accessible to everyone
+          </h5>
 
-    <!--Reference: https://unsplash.com/photos/woman-using-laptop-computer-beside-person-wearing-hat-BVr3XaBiWLU-->
-    <h1>OUR VISION</h1>
-    <p>Networking for Students</p>
-    <p>Sharing Knowledge and Opinions</p>
-    <p>Supporting Academic Goals</p>
+          <h5>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+              class="bi bi-universal-access-circle" viewBox="0 0 16 16">
+              <path
+                d="M8 4.143A1.071 1.071 0 1 0 8 2a1.071 1.071 0 0 0 0 2.143m-4.668 1.47 3.24.316v2.5l-.323 4.585A.383.383 0 0 0 7 13.14l.826-4.017c.045-.18.301-.18.346 0L9 13.139a.383.383 0 0 0 .752-.125L9.43 8.43v-2.5l3.239-.316a.38.38 0 0 0-.047-.756H3.379a.38.38 0 0 0-.047.756Z" />
+              <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0M1 8a7 7 0 1 1 14 0A7 7 0 0 1 1 8" />
+            </svg> Quiz integrated
+          </h5>
 
-    <section class="section2_body">
+          <button class="btn btn-dark ps-3 pe-3 pt-2 pb-2 mt-3">Explore our content now</button>
+        </div>
+        <div class="col-md-6">
+          <h5>Don't forget to put everything you learn into practice</h5>
+          <p>It is great to study and consume content,<br>but it is in practice that all knowledge is learned and
+            grounded.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- <section class="section2_body">
+    <div>
       <h3>Dear Students, All Free</h3>
       <h5>
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -75,15 +117,14 @@
       <p>Learning and courage should have no barriers.</p>
 
       <div class="col-md-8">
-
         <h5>Don't forget to put everything you learn into practice</h5>
         <p>It is great to study and consume content,<br>but it is in practice that all knowledge is learned and
           grounded.
         </p>
         <p><a class="btn btn-primary btn-lg" href="./categories.html" role="button">Explore more</a></p>
       </div>
-    </section>
-  </section>
+    </div>
+  </section> -->
 </body>
 
 

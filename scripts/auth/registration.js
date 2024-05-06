@@ -33,14 +33,31 @@ async function handleRegister() {
             }
         }
     } catch (error) {
-        console.log('Error:', error);
-        alert(`Registration failed: ${error.message}`);
+        // console.log('Error:', error);
+        // alert(`Registration failed: ${error.message}`);
+        showErrorAlert(error.message);
     }
+}
+
+function showErrorAlert(errorMsg) {
+    const errorAlert = document.getElementById('errorAlert');
+    errorAlert.hidden = false;
+    errorAlert.classList.add('show');
+    errorAlert.classList.remove('fade');
+    errorAlert.innerHTML = `<strong>Error!<br></strong> ${errorMsg}`;
+}
+
+function hideErrorAlert() {
+    const errorAlert = document.getElementById('errorAlert');
+    errorAlert.hidden = true;
+    errorAlert.classList.remove('show');
+    errorAlert.classList.add('fade');
 }
 
 function init() { 
     var registerBtn = document.getElementById('register-btn'); 
     registerBtn.onclick = handleRegister;
+    hideErrorAlert();
 }
 
 window.onload = init; 

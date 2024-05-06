@@ -31,14 +31,31 @@ async function handleLogin() {
               }
         }
     } catch (error) {
-        console.log('Error:', error);
-        alert(`Login failed: ${error.message}`);
+        // console.log('Error:', error);
+        // alert(`Login failed: ${error.message}`);
+        showErrorAlert(error.message);
     }
+}
+
+function showErrorAlert(errorMsg) {
+    const errorAlert = document.getElementById('errorAlert');
+    errorAlert.hidden = false;
+    errorAlert.classList.add('show');
+    errorAlert.classList.remove('fade');
+    errorAlert.innerHTML = `<strong>Error!<br></strong> ${errorMsg}`;
+}
+
+function hideErrorAlert() {
+    const errorAlert = document.getElementById('errorAlert');
+    errorAlert.hidden = true;
+    errorAlert.classList.remove('show');
+    errorAlert.classList.add('fade');
 }
 
 function init() { 
     var loginBtn = document.getElementById('login-btn'); 
     loginBtn.onclick = handleLogin;
+    hideErrorAlert();
 }
 
 window.onload = init; 

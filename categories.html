@@ -18,7 +18,7 @@
     <title>Hello, world!</title>
 </head>
 
-<body>
+<body style="background-color: #f8f8f8;">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand ps-3" href="index.html">Instatute</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -28,12 +28,6 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="home.html">Home<span class="sr-only"></span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="login-hammad.html">Login</a>
-                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="contactus.html">Contact</a>
                 </li>
@@ -44,38 +38,29 @@
         </div>
     </nav>
 
-    <div class="jumbotron pt-5 pb-5 bg-warning">
-        <div class="row ps-5 pe-5">
-            <div class="col-md-8">
-                <h1 class="display-3 fw-bold">Stay curious.</h1>
-                <p>
-                    Unleash your curiosity on our home page, where you'll find a treasure trove of stories, insights,
-                    and
-                    expertise from writers exploring a myriad of topics. Dive into captivating narratives, gain fresh
-                    perspectives, and expand your knowledge across diverse subjects. Whether you're seeking inspiration,
-                    information, or simply a new perspective, our home page is your gateway to a world of endless
-                    exploration. Stay curious and embark on a journey of discovery with us.
-                </p>
-                <p><a class="btn btn-primary btn-lg" href="#" role="button">Create a post</a></p>
-            </div>
-            <div class="col-md-4 d-flex justify-content-end align-items-center">
-                <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZnk4bmU1OW45YnR0MzQ2d3BtNnhubzRhZW1yaHNzYm91ZXJ2eXR6aCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xL7PDV9frcudO/giphy.gif"
-                    class="img-fluid" alt="Coding GIF">
-            </div>
+    <div class="jumbotron pt-5 pb-5"
+        style="width: 100%; background-image: url(styles/images/jumbotron.png); background-size: cover; background-position: center;">
+        <div class="container text-center d-flex align-items-center flex-column bd-highlight">
+            <h3 class="display-5 fw-bold">Stay curious.</h3>
+            <p style="width: 550px;" class="text-center">
+                Explore a treasure trove of stories, insights, and expertise on our home page. Dive into captivating
+                narratives and gain fresh perspectives across diverse subjects. Whether seeking inspiration or
+                information, embark on your journey of discovery and stay curious with us.
+            </p>
+            <p><a class="btn btn-dark" href="#" role="button">Create a post</a></p>
         </div>
     </div>
 
-    <div class="text-center p-5">
+    <div class="text-center p-5 pt-3">
         <div class="row">
             <div class="col-sm-3 pt-2">
-                <h3 class="mb-3 text-start">Categories</h3>
-                <div class="list-group">
+                <div class="list-group container p-3 bg-white shadow-sm">
+                    <h5 class="mb-3 text-start">Explore categories</h5>
                     <!-- Categories -->
                 </div>
             </div>
             <div class="col-sm-9 pt-2">
                 <div id="container" class="list-group list-group-flush">
-                    <h3 id="categoryTitle" class="mb-3 text-start text-capitalize"></h3>
                     <!-- Posts -->
                 </div>
             </div>
