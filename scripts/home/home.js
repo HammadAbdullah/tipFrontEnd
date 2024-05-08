@@ -1,4 +1,5 @@
 var selectedCategory = "";
+var currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
 // MARK: - VIEW CREATOR
 function createCategoryButton(category, isActive = false) {
@@ -58,6 +59,21 @@ function updateListGroup(categories) {
     });
 }
 
+function populateSelect(data) {
+    const select = document.getElementById('category-select');
+    select.classList.add('text-capitalize');
+    while (select.firstChild) {
+        select.removeChild(select.firstChild);
+    }
+
+    data.forEach(item => {
+        const option = document.createElement('option');
+        option.value = item.id;
+        option.textContent = item.title;
+        select.appendChild(option);
+    });
+}
+
 function addPostsToContainer(posts) {
     const container = document.getElementById('container');
     const children = container.children;
@@ -85,6 +101,7 @@ async function getCategoryData() {
         }
         const data = await response.json();
         updateListGroup(data.data);
+        populateSelect(data.data);
     } catch (error) {
         alert('Error getCategoryData:' + error);
         updateListGroup([]);
@@ -119,7 +136,76 @@ async function getUserById(id) {
     }
 }
 
+async function createPost() {
+    const categoryId = document.getElementById('category-select').value;
+    const title = document.getElementById('title-input').value;
+    const content = document.getElementById('content-textarea').value;
+    const question = document.getElementById('question-input').value;
+    const answers = [
+        document.getElementById('answer1-input').value,
+        document.getElementById('answer2-input').value,
+        document.getElementById('answer3-input').value,
+        document.getElementById('answer4-input').value
+    ];
+    const correctAnswer = document.getElementById('correct-answer-input').value;
+
+    const post = {
+        user_id: currentUser._id,
+        category_id: categoryId,
+        title: title,
+        content: content,
+        question: question,
+        answers: answers,
+        correctAnswer: correctAnswer
+    };
+
+    try {
+        const response = await fetch('http://localhost:30002/post/create', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(post)
+        });
+        const data = await response.json();
+        console.log('Success:', data);
+        displayAlert(true, "Post created successfully!");
+        getPostsByCategory(categoryId);
+    } catch (error) {
+        console.error('Error:', error);
+        displayAlert(false, "Failed to create post. Please check your network connection and try again.");
+    }
+
+    clearForm();
+}
+
+function clearForm() {
+    document.getElementById('category-select').value = '';
+    document.getElementById('title-input').value = '';
+    document.getElementById('content-textarea').value = '';
+    document.getElementById('question-input').value = '';
+    document.getElementById('answer1-input').value = '';
+    document.getElementById('answer2-input').value = '';
+    document.getElementById('answer3-input').value = '';
+    document.getElementById('answer4-input').value = '';
+    document.getElementById('correct-answer-input').value = '';
+}
+
 // MARK: - FUNCTIONS
+function displayAlert(isSuccess, message) {
+    const alertBox = document.querySelector('.alert');
+    alertBox.textContent = message;
+    alertBox.hidden = false;
+
+    if (isSuccess) {
+        alertBox.classList.remove('alert-danger');
+        alertBox.classList.add('alert-success');
+    } else {
+        alertBox.classList.remove('alert-success');
+        alertBox.classList.add('alert-danger');
+    }
+}
+
 function onContinueReadingTapped(postID) {
     sessionStorage.setItem('postID', postID);
     sessionStorage.setItem('category', JSON.stringify(selectedCategory));
@@ -147,6 +233,8 @@ function getDateMonthYear(dateString) {
 function init() {
     getCategoryData();
     getPostsByCategory(1);
+    var createPostBtn = document.getElementById('create-post-btn');
+    createPostBtn.onclick = createPost;
 }
 
 window.onload = init;

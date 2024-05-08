@@ -16,6 +16,14 @@ description: img position, content padding
   padding: 30px;
 }
 
+.custom-img {
+  border-radius: 54.38px;
+  height: 300px;
+  width: 600px;
+  object-fit: cover;
+  float: right;
+}
+
 /* .section2_body {
 
   margin-left: 45%;

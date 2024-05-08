@@ -4,21 +4,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="scripts/auth/registration.js"></script>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="styles.css">
   <title>Registration Page</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="styles/loginRegisterStyles.css">
+
+  <!-- Bootstrap Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  
+  <!-- Custom JavaScript -->
+  <script src="scripts/auth/registration.js" defer></script>
 </head>
+
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -46,20 +46,20 @@
       share insights, discuss academic topics, and connect with peers. Register now to join the conversation and access
       exclusive resources!</p>
     <form id="registrationForm">
-      <label class="pb-1 text-secondary" for="firstname">First name <span class="text-danger">*</span></label>
-      <input class="rounded" type="text" id="firstname" placeholder="Enter your first name">
+      <label class="pb-1" for="firstname">First name <span class="text-danger">*</span></label>
+      <input class="rounded" type="text" id="firstname">
 
-      <label class="pt-2 text-secondary" for="lastname">Last Name <span class="text-danger">*</span></label>
-      <input class="rounded" type="text" id="lastname" placeholder="Last Name">
+      <label class="pt-2" for="lastname">Last Name <span class="text-danger">*</span></label>
+      <input class="rounded" type="text" id="lastname">
 
-      <label class="pt-2 text-secondary" for="username">Display Name <span class="text-danger">*</span></label>
-      <input class="rounded" type="text" id="username" placeholder="Display Name">
+      <label class="pt-2" for="username">Display Name <span class="text-danger">*</span></label>
+      <input class="rounded" type="text" id="username">
 
-      <label class="pt-2 text-secondary" for="email">Email Address <span class="text-danger">*</span></label>
-      <input class="rounded" type="email" id="email" placeholder="Email Address">
+      <label class="pt-2" for="email">Email Address <span class="text-danger">*</span></label>
+      <input class="rounded" type="email" id="email">
 
-      <label class="pt-2 text-secondary" for="password">Password <span class="text-danger">*</span></label>
-      <input class="rounded" type="password" id="password" placeholder="Password">
+      <label class="pt-2" for="password">Password <span class="text-danger">*</span></label>
+      <input class="rounded" type="password" id="password">
       <button class="btn mb-3" type="button" id="register-btn">Register</button>
       <p class="text-center">Already have an account? <a class="p-0 text-primary" href="login.html" style="text-decoration: none;"><strong>Login</strong></a></p>
       

@@ -1,125 +1,139 @@
 /* post page  */
 /* ---------------------------------------------- */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-  }
-
-  /*                           login page                  */
-  .navbar {
-    background-color: #fff;
-    padding: 10px;
-    display: flex;
-    justify-content: flex-start;
-    
-  }
-  .navbar a {
-    text-decoration: none;
-    font-size: 19px;
-    margin-right: 15px;
-    color: #333;
-    transition: color 0.3s ease, font-size 0.3s ease;
-  }
-  .navbar a:hover {
-    color: white; /* Change text color to white on hover */
-    background-color: #6a1b9a; /* Change background color to purple on hover */
-    padding: 3px;
-    font-size: 20px; /* Increase font size on hover */
-    border-radius: 5px;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
 }
 
-
 .container {
-    max-width: 800px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+textarea {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #6a1b9a;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+#postList {
+  margin-top: 20px;
+}
+
+.post {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+/* the loader gradient animation  */
+
+
+.loader {
+  display: none;
+  position: center;
+  margin-top: 50px;
+  margin-left: 550px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: linear-gradient(#6a1b9a, #b16fda, #8928c6);
+  animation: animate 1.2s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
   }
-  
-  textarea {
-    width: 100%;
-    margin-bottom: 10px;
-    padding: 10px;
-    border: 1px solid #ddd;
+
+  100% {
+    transform: rotate(360deg);
   }
-  
-  button {
-    padding: 10px 20px;
-    background-color: #6a1b9a;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-  }
-  
-  #postList {
-    margin-top: 20px;
-  }
-  
-  .post {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    padding: 10px;
-    margin-bottom: 10px;
-  }
-  /* the loader gradient animation  */
-  
-  
-  .loader {
-    display: none;
-    position: center;
-    margin-top: 50px;
-    margin-left: 550px;
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    background: linear-gradient(#6a1b9a, #b16fda, #8928c6);
-    animation: animate 1.2s linear infinite;
-  }
-  
-  @keyframes animate {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-  }
-  
-  .loader span {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background: linear-gradient(#6a1b9a, #b16fda, #7718b3);
-  }
-  
-  .loader span:nth-child(1) {
-    filter: blur(5px);
-  }
-  
-  .loader span:nth-child(2) {
-    filter: blur(10px);
-  }
-  
-  .loader span:nth-child(3) {
-    filter: blur(25px);
-  }
-  
-  .loader span:nth-child(4) {
-    filter: blur(50px);
-  }
-  
-  .loader:after {
-    content: '';
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    right: 10px;
-    bottom: 10px;
-    background: #f1f1f1;
-    border: solid white 10px;
-    border-radius: 50%;
-  }
+}
+
+.loader span {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(#6a1b9a, #b16fda, #7718b3);
+}
+
+.loader span:nth-child(1) {
+  filter: blur(5px);
+}
+
+.loader span:nth-child(2) {
+  filter: blur(10px);
+}
+
+.loader span:nth-child(3) {
+  filter: blur(25px);
+}
+
+.loader span:nth-child(4) {
+  filter: blur(50px);
+}
+
+.loader:after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  background: #f1f1f1;
+  border: solid white 10px;
+  border-radius: 50%;
+}
+
+/* Styling for post heading input */
+#postHeading {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+/* Styling for category dropdown */
+#category {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  /* Add background color for consistency */
+  color: #333;
+  /* Text color */
+}
+
+/* Style for dropdown arrow */
+#category:after {
+  content: '\25BC';
+  /* Unicode for down arrow */
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+}
+
+/* Hover effect for dropdown options */
+#category option:hover {
+  background-color: #f4f4f4;
+  /* Change background color on hover */
+}

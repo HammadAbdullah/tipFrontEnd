@@ -7,7 +7,7 @@ body {
 
 /*                           login page                  */
 .login-container {
-  width: 50%;
+  width: 40%;
   margin: 50px auto;
   padding: 20px;
   background-color: #fff;
@@ -56,7 +56,7 @@ body {
 }
 
 .registration-container {
-  width: 50%;
+  width: 40%;
   margin: 50px auto;
   padding: 20px;
   background-color: #fff;
