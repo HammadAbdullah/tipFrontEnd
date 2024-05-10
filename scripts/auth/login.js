@@ -22,7 +22,7 @@ async function handleLogin() {
             console.log('Login Success:', data);
             localStorage.setItem('token', data.data.token);
             localStorage.setItem('currentUser', JSON.stringify(data.data.validEmail));
-            window.location.href = 'categories.html';
+            window.location.href = 'home.html';
         } else {
             if (data.error && data.error.details) {
                 throw new Error(data.error.details.map(detail => detail.message).join(', '));
